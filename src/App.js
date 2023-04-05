@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -7,17 +6,17 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState([]);
   const [userContent, setUserContent] = useState("");
-  const getDataDemo = async () => {
-    try {
-      setLoading(true);
-      let res = await axios.get("http://localhost:8080/basic/test");
-      setMessages([res.data.completion]);
-    } catch (err) {
-      console.log({ err });
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const getDataDemo = async () => {
+  //   try {
+  //     setLoading(true);
+  //     let res = await axios.get("http://localhost:8080/basic/test");
+  //     setMessages([res.data.completion]);
+  //   } catch (err) {
+  //     console.log({ err });
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
   useEffect(() => {
     // getDataDemo();
   }, []);
@@ -48,7 +47,8 @@ function App() {
   };
   return (
     <div className="App">
-      <h1>CHAT 5000</h1>
+      <h1>Joke Machine</h1>
+      <h2>Built by Yoke</h2>
       {renderMessages()}
       <form onSubmit={handleSubmit}>
         <input
