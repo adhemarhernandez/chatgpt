@@ -34,7 +34,7 @@ function App() {
     console.log();
     try {
       setLoading(true);
-      let res = await axios.post("http://localhost:8080/basic", {
+      let res = await axios.post("https://adhemaryoke-api.onrender.com/basic", {
         message: { role: "user", content: userContent },
       });
       console.log(res);
